@@ -1,0 +1,28 @@
+.notfound-parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 0, 0, 0.089);
+    height: 70dvh;
+    width: 100%;
+    gap: 10px;
+}
+.notfound-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--light-color);
+
+}
+.notfound-img{
+    height: 20dvw;
+    width: 20dvw;
+}
+.notfound-link{
+    color: var(--theme-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 3vh;
+    margin-top: 5vh;
+}
