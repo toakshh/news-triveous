@@ -23,7 +23,7 @@ const useApiCall = (URL) => {
     fetchData()
         
     },[URL])
-    return [apiData,loading, error]
+    return {apiData,loading, error}
 }
 
 export default useApiCall

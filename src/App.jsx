@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import styles from './App.module.css'
 import Navbar from './components/Nav/Navbar'
-import Login from "./components/Login/Login";
-import Register from "./components/Register/Register";
-import Content from "./components/Content/Content";
+import Login from "./Pages/Login/Login";
+import Register from "./Pages/Register/Register";
+import Content from "./Pages/Content/Content";
 import NotFound from "./components/notFound/NotFound"
 import { SnackbarProvider } from "notistack";
 
