@@ -6,10 +6,13 @@
   box-sizing: border-box;
 }
 :root{
-  /* --theme: #5645ec; */
-  --theme: rgb(104, 192, 104);
-  --dark: #26743d;
+  /* --theme: rgb(104, 192, 104); */
+  --theme: #1d1b1bc2;
+
   --light: #fefefe;
+}
+body{
+  scroll-behavior: smooth;
 }
 /* to avoid blue layer in mobile devices */
 input,
@@ -18,7 +21,6 @@ button,
 select,
 a {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
-
 }
 a:focus,a:visited,a:active{
   outline: none;
@@ -33,4 +35,6 @@ a:focus,a:visited,a:active{
 }
 a{
   text-decoration: none;
+
 }
+

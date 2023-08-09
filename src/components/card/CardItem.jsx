@@ -17,10 +17,12 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    // width: 400,
-    bgcolor: 'background.paper',
+    bgcolor:'transparent',
     boxShadow: 24,
     p: 1,
+    '@media (max-width:684px)': {
+        width: '90%',
+    },
     
 };
 const CardItem = (props) => {
@@ -56,7 +58,7 @@ const CardItem = (props) => {
                             <Box sx={style}>
                                 <Card
                                     key={`${id}-${each.title}`}
-                                    sx={{ maxWidth: 300, height: "fit-content", overflowY: 'scroll' }}
+                                    sx={{ maxWidth: '100%', maxHeight: "80vh", overflowY: 'scroll' }}
                                 >
                                     <CardActionArea >
                                         <LazyLoadImage
@@ -93,7 +95,7 @@ const CardItem = (props) => {
                 </Card>
             ) :
                 (
-                    <Card key={`${id}-${each.title}`} sx={{ maxWidth: 300, height: 400, overflowY: 'scroll' }}>
+                    <Card key={`${id}-${each.title}+grid`} sx={{borderRadius:"12px", maxWidth: 300, height: 500, overflowY: 'scroll','@media (max-width:682px)':{maxWidth:'90%'} }}>
                         <a href={each.url} target="_blank" rel="noopener noreferrer">
                             <CardActionArea >
                                 <LazyLoadImage
@@ -102,9 +104,10 @@ const CardItem = (props) => {
                                     alt="news image cover"
                                 />
                                 <CardContent>
-                                    <Typography gutterBottom variant="h5" component="div">
-                                        {each?.title}
-                                    </Typography>
+                                <Typography gutterBottom component="div"
+                                            sx={{fontSize:'1rem', fontWeight:'600',}}>
+                                                {each?.title}
+                                            </Typography>
                                     <Typography variant="body2" color="text.secondary">
                                         {each.description}
                                     </Typography>

@@ -19,12 +19,8 @@
     gap: 1rem;
     border-radius: 20px;
     padding: 1rem 0;
-    border: 2px solid var(--theme);
+    border: 2px solid rgb(43, 43, 43);
+    background-color: var(--theme);
 }
-/* .cardItemParent{
-    display: flex;
-    width: 45%;
-    height: max-content;
-    border: 2px solid green;
-} */
+
 

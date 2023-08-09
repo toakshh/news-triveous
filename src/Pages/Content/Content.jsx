@@ -23,7 +23,8 @@ const Content = () => {
         if (!navigator.onLine) {
             const storedData = localStorage.getItem("newsData");
             if (storedData) {
-                dispatch(fetchNewsSuccess(JSON.parse(storedData)));
+                const localData= JSON.parse(storedData);
+                dispatch(fetchNewsSuccess(localData));
             }
         } else {
             if (fetchLoading) {
