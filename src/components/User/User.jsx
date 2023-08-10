@@ -9,7 +9,7 @@ import { Tooltip,Zoom,tooltipClasses } from "@mui/material";
 import styled from "@emotion/styled";
 import { enqueueSnackbar } from "notistack";
 
-
+//themed tooltip of mui to show on hover on userprofile
 const ThemedTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} arrow classes={{ popper: className }} />
 ))(() => ({
@@ -37,21 +37,22 @@ const User = () => {
   const handleLogOut=()=>{
     enqueueSnackbar("Logged out ",{variant: 'info'})
     dispatch(clearUser())
-    // console.log("logging out")
   }
+
+  //update component when use login or logout
   useEffect(()=>{
     dispatch(listenToAuthChanges());
-    // console.log(isLoggedIn)
   },[dispatch,isLoggedIn])
 
+  //checking if user is not logged in then show login and signup buttons only
   if(!isLoggedIn){
     return (
       <div className={`${styles.userMain} dflex`}>
         <Link to="/login" className={styles.login }>Log in</Link>
         <Link to='/register' className={styles.signup}>Sign up</Link>
       </div>)
-    
   }
+
   return (
     <div className={`${styles.userMain} dflex`}>
         <ThemedTooltip 
@@ -60,6 +61,7 @@ const User = () => {
           TransitionComponent={Zoom} 
           disableFocusListener enterTouchDelay={0}  
         >
+          {/* user profile */}
           <img 
             src={userProfile} 
             alt="user_profile" 

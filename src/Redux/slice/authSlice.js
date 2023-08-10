@@ -25,7 +25,7 @@ const authSlice = createSlice({
 
 export const { setUser, clearUser } = authSlice.actions;
 
-// Asynchronously listen to authentication state changes
+//asynchronously listen to authentication state changes
 export const listenToAuthChanges = () => (dispatch) => {
   onAuthStateChanged(auth, (user) => {
     dispatch(setUser(user ? user.email : null));

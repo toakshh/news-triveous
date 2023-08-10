@@ -9,17 +9,23 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchNewsError, fetchNewsStart, fetchNewsSuccess } from "../../Redux/slice/news";
 
 const Content = () => {
-    const [gridView, setGridView] = useState(false)
+
+    //to show circular progress instead of login button
+    const [gridView, setGridView] = useState(false) 
     const URL = 'https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=2f231bd224374748bb24c03bb05002b9';
     const dispatch = useDispatch();
+
+    //to read data from slice
     const { newsData, loading, error } = useSelector(
         (state) => state.fetchNews
     );
+
+    //custom hook to get data from url
     const { apiData: fetchData, loading: fetchLoading, error: fetchError } =
         useApiCall(URL);
 
     useEffect(() => {
-        // console.log(navigator.onLine)
+        //checking if user is offline then show localstorage data
         if (!navigator.onLine) {
             const storedData = localStorage.getItem("newsData");
             if (storedData) {
@@ -27,6 +33,7 @@ const Content = () => {
                 dispatch(fetchNewsSuccess(localData));
             }
         } else {
+            //working on basis of custom hooks response
             if (fetchLoading) {
                 dispatch(fetchNewsStart())
             } else if (fetchData) {
@@ -41,12 +48,14 @@ const Content = () => {
         return <Loading />
     }                   
     if (error) {
-
         return <Error msg={error} />
     }
+
+    //toggle view mode
     const handleView = () => {
         setGridView(!gridView)
     }
+    
     return (
         <div className={styles.contentMain}>
             <h2>Top Headlines</h2>

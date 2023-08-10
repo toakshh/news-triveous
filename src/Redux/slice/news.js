@@ -4,7 +4,7 @@ import {createSlice} from "@reduxjs/toolkit"
 const newsSlice= createSlice({
     name:'fetchNews',
     initialState:{
-        newsData: JSON.parse(localStorage.getItem('newsData')) || null,
+        newsData: JSON.parse(localStorage.getItem('newsData')) || null, //to store localstorage data if localstorage data is truthy
         loading: false,
         error: null,
     },

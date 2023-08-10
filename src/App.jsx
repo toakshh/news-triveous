@@ -21,7 +21,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/" element={<Content />}/>
-            <Route path="*" element={<NotFound />} />
+            {/* handle other non-existing paths */}
+            <Route path="*" element={<NotFound />} /> 
           </Routes>
         </SnackbarProvider>
       </BrowserRouter>
