@@ -12,7 +12,7 @@ const useApiCall = (URL) => {
       try {
         const response = await axios.get(URL);
         // setApiData(response.data.articles)
-        // console.log(response.data.data);
+        console.log(response.data.news);
         setApiData(response.data.news);
       } catch (e) {
         setError(e.message);

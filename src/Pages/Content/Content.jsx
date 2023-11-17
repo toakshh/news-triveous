@@ -18,10 +18,7 @@ const Content = () => {
   const URL = `https://api.currentsapi.services/v1/latest-news?apiKey=${
     import.meta.env.VITE_APP_API_KEY
   }`;
-  // const URL = `http://api.mediastack.com/v1/news?access_key=${
-  //   import.meta.env.VITE_APP_API_KEY
-  // }`;
-  // http://api.mediastack.com/v1/news?access_key=6475ca3708e916e3d8c488f746e23564
+
   // -----------------------------------------------
   // This URL runs on localhost only and not on the production link...
   //------------------------------------------------
@@ -84,7 +81,7 @@ const Content = () => {
           newsData?.map((each, index) => {
             return (
               // eslint-disable-next-line react/jsx-key
-              <CardItem id={index} each={each} gridView={gridView} />
+              <CardItem id={each + index} each={each} gridView={gridView} />
             );
           })
         ) : (

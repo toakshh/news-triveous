@@ -130,7 +130,7 @@ const CardItem = (props) => {
               <LazyLoadImage
                 className={styles.contentImg}
                 // src={each.urlToImage}
-                src={each.image ? each.image : noImg}
+                src={each.image === "None" ? noImg : each.image}
                 alt="news image cover"
               />
               <CardContent>
@@ -149,7 +149,9 @@ const CardItem = (props) => {
                   color="text.primary"
                   sx={{ marginTop: "1rem" }}
                 >
-                  Author- {each?.author || "Anonymous"}
+                  Author-{" "}
+                  {(each.author.length > 20 ? "Anonymous" : each?.author) ||
+                    "Anonymous"}
                 </Typography>
               </CardContent>
             </CardActionArea>
