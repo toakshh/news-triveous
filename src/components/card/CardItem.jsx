@@ -42,8 +42,8 @@ const CardItem = (props) => {
       {/* conditionally rendering grid or list view mode */}
       {gridView ? (
         // list view mode
-        <Card
-          key={`${id}-${each.title}`}
+        <Box
+          key={`${id}-${each.title}-list`}
           sx={{ height: 100 }}
           className={styles.listMain}
         >
@@ -108,16 +108,16 @@ const CardItem = (props) => {
               </Box>
             </Fade>
           </Modal>
-        </Card>
+        </Box>
       ) : (
         //grid view mode
-        <Card
+        <Box
           key={`${id}-${each.title}+grid`}
           sx={{
             borderRadius: "12px",
             maxWidth: 300,
-            height: 500,
-            overflowY: "scroll",
+            height: 400,
+            backgroundColor: "#212324",
             transition: "all .2s ease-in-out",
             "@media (max-width:682px)": { maxWidth: "90%" },
             "&:hover": {
@@ -129,7 +129,6 @@ const CardItem = (props) => {
             <CardActionArea>
               <LazyLoadImage
                 className={styles.contentImg}
-                // src={each.urlToImage}
                 src={each.image === "None" ? noImg : each.image}
                 alt="news image cover"
               />
@@ -137,26 +136,45 @@ const CardItem = (props) => {
                 <Typography
                   gutterBottom
                   component="div"
-                  sx={{ fontSize: "1rem", fontWeight: "600" }}
+                  sx={{
+                    fontSize: "1rem",
+                    fontWeight: "600",
+                    overflow: "hidden",
+                    display: "-webkit-box",
+                    WebkitBoxOrient: "vertical",
+                    WebkitLineClamp: 2,
+                    textOverflow: "ellipsis",
+                    height: 50,
+                  }}
                 >
-                  {each?.title}
+                  {each.title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography
+                  variant="body2"
+                  sx={{
+                    overflow: "hidden",
+                    display: "-webkit-box",
+                    WebkitBoxOrient: "vertical",
+                    WebkitLineClamp: 3,
+                    textOverflow: "ellipsis",
+                    height: 60,
+                  }}
+                >
                   {each.description}
                 </Typography>
                 <Typography
                   variant="body2"
-                  color="text.primary"
+                  color="white"
                   sx={{ marginTop: "1rem" }}
                 >
-                  Author-{" "}
-                  {(each.author.length > 20 ? "Anonymous" : each?.author) ||
+                  <b>Author</b> -
+                  {(each.author.length > 20 ? " Anonymous" : each?.author) ||
                     "Anonymous"}
                 </Typography>
               </CardContent>
             </CardActionArea>
           </a>
-        </Card>
+        </Box>
       )}
     </>
   );
@@ -164,7 +182,7 @@ const CardItem = (props) => {
 CardItem.propTypes = {
   each: PropTypes.object,
   gridView: PropTypes.bool,
-  id: PropTypes.number,
+  id: PropTypes.string,
 };
 
 export default CardItem;

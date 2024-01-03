@@ -1,26 +1,25 @@
-.userMain{
-    gap: 10px;
+.userMain {
+  gap: 10px;
 }
-.userAvatar{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.userMain > a {
+  background-color: #262a2b;
+  padding: 10px 20px;
+  border: 1px solid;
+  text-decoration: none;
+  border-radius: 8px;
+  color: rgb(161, 161, 161);
+  font-size: 1rem;
+  font-weight: 600;
+  position: relative;
+}
 
+.userMain > a:hover {
+  background-color: var(--theme);
+  color: white;
+  transition: all 0.3s ease-in-out;
 }
-.userMain >a{
-    background-color: var(--light);
-    padding: 10px 20px;
-    border: 1px solid ;
-    text-decoration: none;
-    border-radius: 8px;
-    color:var(--theme);
-    font-size: 1rem;
-    font-weight: 600;
-    position: relative;
-}
-
-.userMain > a:hover{
-    background-color: var(--theme); 
-    color: white;   
-    transition: all .3s ease-in-out;
-  }

@@ -1,26 +1,27 @@
-.contentMain{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-    padding: 2rem;
-    flex-wrap: wrap;
-    gap: 20px;
+.contentMain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 2rem;
+  flex-wrap: wrap;
+  gap: 20px;
+  color: white;
 }
-.contentMain a,.contentMain a:visited{
-    text-decoration: none;
-    color: inherit;
+.contentMain a,
+.contentMain a:visited {
+  text-decoration: none;
+  color: inherit;
 }
-.cardsParent{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    border-radius: 20px;
-    padding: 1rem 0;
-    border: 2px solid rgb(43, 43, 43);
-    background-color: var(--theme);
+.cardsParent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-radius: 20px;
+  padding: 1rem 0;
+  width: 90vw;
+  border: 2px solid #7b7265;
+  background-color: var(--theme);
 }
-
-

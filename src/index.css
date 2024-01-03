@@ -1,17 +1,19 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
-*,*::after,*::before{
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
-:root{
+:root {
   /* --theme: rgb(104, 192, 104); */
-  --theme: #1d1b1bc2;
+  --theme: #0d0e0e;
 
-  --light: #fefefe;
+  --light: #e8e6e3;
 }
-body{
+body {
   scroll-behavior: smooth;
 }
 /* to avoid blue layer in mobile devices */
@@ -20,21 +22,21 @@ textarea,
 button,
 select,
 a {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-a:focus,a:visited,a:active{
+a:focus,
+a:visited,
+a:active {
   outline: none;
 }
 * {
-    -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
-.dflex{
+.dflex {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-a{
+a {
   text-decoration: none;
-
 }
-
